@@ -6,14 +6,14 @@ import org.testng.annotations.Test;
 
 public class BntuTest {
     @Test
-    public void checkRegistrationOnlineRegistration() {
+    public void checkRegistrationFromDataBntu() {
         WebDriver driver;
         System.setProperty("webdriver.chrome.driver", "G:\\Installation\\chromedriver.exe");
         driver = new ChromeDriver();
         driver.get("https://bntu.by/user/login");
 
-        WebElement firstNameField = driver.findElement(By.xpath("//input[@type=\"username\"]"));
-        firstNameField.sendKeys("BasilAka");
+        WebElement loginField = driver.findElement(By.xpath("//input[@type=\"username\"]"));
+        loginField.sendKeys("BasilAka");
 
         WebElement passwordField = driver.findElement(By.xpath("//input[@type=\"password\"]"));
         passwordField.sendKeys("12345");

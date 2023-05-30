@@ -46,7 +46,8 @@ public class TwoFromTest {
 
         WebElement userDataText = driver.findElement(By.xpath(".//tr[1]/td[1]/following-sibling::td"));
 
-        Assert.assertTrue(userDataText.getText().contains("Basil Akavity") || userDataText.getText().contains("Alex Akavity"));
+        Assert.assertTrue(userDataText.getText().contains("Basil Akavity") ||
+                userDataText.getText().contains("Alex Akavity"));
     }
 
     @AfterMethod
