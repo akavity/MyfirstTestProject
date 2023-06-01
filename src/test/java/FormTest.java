@@ -5,11 +5,17 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 public class FormTest extends BaseTest {
     protected WebDriver driver;
     private RegistrationFormPage registrationFormPage;
+
+//    @DataProvider(name = "data-provider")
+//    public Object[][] dpMethod() {
+//        return new Object[][]{{"Alex"}, {"Alex"}};
+//    }
 
     @BeforeClass
     public void preparationForTest() {
@@ -17,9 +23,9 @@ public class FormTest extends BaseTest {
         registrationFormPage = new RegistrationFormPage(driver);
     }
 
-    @Test
+    @Test // (dataProvider = "data-provider")
     public void checkRegistrationFormData() {
-        registrationFormPage.enterFirstName("Basil");
+        registrationFormPage.enterFirstName("Alex");
         registrationFormPage.enterLastName("Akavity");
         registrationFormPage.clickButton();
         registrationFormPage.enterMobilePhoneNumber("7529545499");
@@ -30,6 +36,6 @@ public class FormTest extends BaseTest {
 
         WebElement userDataText = driver.findElement(By.xpath(".//tr[1]/td[1]/following-sibling::td"));
 
-        Assert.assertTrue(userDataText.getText().contains("Basil Akavity"));
+        Assert.assertTrue(userDataText.getText().contains("Alex Akavity"));
     }
 }
