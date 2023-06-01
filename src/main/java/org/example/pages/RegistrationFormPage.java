@@ -32,10 +32,9 @@ public class RegistrationFormPage {
     @FindBy(xpath = "//button[@type=\"submit\"]")
     private WebElement submitButton;
 
-    public RegistrationFormPage(WebDriver driver, WebDriverWait wait) {
+    public RegistrationFormPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
         this.driver = driver;
-        this.wait = wait;
     }
 
     public void enterFirstName(String firstName) {
