@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -11,7 +12,7 @@ public class FormTest extends BaseTest {
     protected WebDriver driver;
     private RegistrationFormPage registrationFormPage;
 
-    @BeforeMethod
+    @BeforeClass
     public void preparationForTest() {
         driver = DriverManager.getDriver();
         registrationFormPage = new RegistrationFormPage(driver);
@@ -30,7 +31,6 @@ public class FormTest extends BaseTest {
 
         WebElement userDataText = driver.findElement(By.xpath(".//tr[1]/td[1]/following-sibling::td"));
 
-        Assert.assertTrue(userDataText.getText().contains("Basil Akavity") ||
-                userDataText.getText().contains("Alex Akavity"));
+        Assert.assertTrue(userDataText.getText().contains("Basil Akavity"));
     }
 }
