@@ -1,5 +1,6 @@
 package org.example.pages;
 
+import org.example.utils.Waiters;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -21,8 +22,9 @@ public class RegistrationBntuFormPage {
         this.driver = driver;
     }
 
-    public void enterLogin(String name) {
-        loginField.sendKeys(name);
+    public void enterLogin(String login) {
+        Waiters.waitForVisibility(loginField);
+        loginField.sendKeys(login);
     }
 
     public void enterPassword(String password) {
