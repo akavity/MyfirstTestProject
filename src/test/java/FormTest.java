@@ -12,10 +12,10 @@ public class FormTest extends BaseTest {
     protected WebDriver driver;
     private RegistrationFormPage registrationFormPage;
 
-//    @DataProvider(name = "data-provider")
-//    public Object[][] dpMethod() {
-//        return new Object[][]{{"Alex"}, {"Alex"}};
-//    }
+    @DataProvider(name = "data-provider")
+    public Object[][] dpMethod() {
+        return new Object[][]{{"Alex"}, {"Basil"}};
+    }
 
     @BeforeClass
     public void preparationForTest() {
@@ -23,9 +23,9 @@ public class FormTest extends BaseTest {
         registrationFormPage = new RegistrationFormPage(driver);
     }
 
-    @Test // (dataProvider = "data-provider")
-    public void checkRegistrationFormData() {
-        registrationFormPage.enterFirstName("Alex");
+    @Test (dataProvider = "data-provider")
+    public void checkRegistrationFormData(String name) {
+        registrationFormPage.enterFirstName(name);
         registrationFormPage.enterLastName("Akavity");
         registrationFormPage.clickButton();
         registrationFormPage.enterMobilePhoneNumber("7529545499");
@@ -36,6 +36,6 @@ public class FormTest extends BaseTest {
 
         WebElement userDataText = driver.findElement(By.xpath(".//tr[1]/td[1]/following-sibling::td"));
 
-        Assert.assertTrue(userDataText.getText().contains("Alex Akavity"));
+        Assert.assertTrue(userDataText.getText().contains("Alex Akavity") || userDataText.getText().contains("Basil Akavity"));
     }
 }
