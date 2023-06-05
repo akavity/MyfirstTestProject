@@ -23,7 +23,7 @@ public class FormTest extends BaseTest {
         registrationFormPage = new RegistrationFormPage(driver);
     }
 
-    @Test (dataProvider = "data-provider")
+    @Test(dataProvider = "data-provider")
     public void checkRegistrationFormData(String name) {
         registrationFormPage.enterFirstName(name);
         registrationFormPage.enterLastName("Akavity");
