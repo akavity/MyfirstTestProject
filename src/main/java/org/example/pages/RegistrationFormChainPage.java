@@ -1,9 +1,11 @@
 package org.example.pages;
 
+import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+@Log4j2
 public class RegistrationFormChainPage extends BasePage {
 
     protected WebDriver driver;
@@ -38,31 +40,37 @@ public class RegistrationFormChainPage extends BasePage {
     }
 
     public RegistrationFormChainPage enterFirstName(String name) {
+        log.info("Enter first name");
         firstNameField.sendKeys(name);
         return this;
     }
 
     public RegistrationFormChainPage enterLastName(String lastName) {
+        log.info("Enter last name");
         lastNameField.sendKeys(lastName);
         return this;
     }
 
     public RegistrationFormChainPage clickMaleRadioButton() {
+        log.info("Click male radio Button");
         maleRadioButton.click();
         return this;
     }
 
     public RegistrationFormChainPage enterMobileNumber(String number) {
+        log.info("Enter mobile number");
         mobilePhoneNumberField.sendKeys(number);
         return this;
     }
 
     public RegistrationFormChainPage clickSubmitButton() {
+        log.info("click submit button");
         submitButton.click();
         return this;
     }
 
     public String getDataText() {
+        log.info("Get user data text");
         return userDataText.getText();
     }
 }
