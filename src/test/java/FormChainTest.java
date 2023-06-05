@@ -1,4 +1,5 @@
 import org.example.driver.DriverManager;
+import org.example.models.UserData;
 import org.example.pages.RegistrationFormChainPage;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
@@ -12,7 +13,10 @@ public class FormChainTest extends BaseTest {
 
     @DataProvider(name = "data-provider")
     public Object[][] dpMethod() {
-        return new Object[][]{{"Alex"}, {"Basil"}};
+        return new Object[][]{
+                {new UserData("Alex")},
+                {new UserData("Basil")}
+        };
     }
 
     @BeforeClass
@@ -22,15 +26,16 @@ public class FormChainTest extends BaseTest {
     }
 
     @Test(dataProvider = "data-provider")
-    public void checkRegistrationFormDataChain(String name) {
+    public void checkRegistrationFormDataChain(UserData userData) {
 
         String userDataText = registrationFormPage
-                .enterFirstName(name).enterLastName("Akavity")
+                .enterFirstName(userData.getName())
+                .enterLastName("Akavity")
                 .clickMaleRadioButton()
                 .enterMobileNumber("7529545499")
                 .clickSubmitButton()
                 .getDataText();
 
-        Assert.assertTrue(userDataText.contains(name));
+        Assert.assertTrue(userDataText.contains(userData.getName()));
     }
 }
