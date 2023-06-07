@@ -1,7 +1,5 @@
 package org.example.pages;
 
-import org.example.utils.Waiters;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -31,37 +29,42 @@ public class RegistrationFormPage extends BasePage {
     @FindBy(xpath = "//button[@type=\"submit\"]")
     private WebElement submitButton;
 
+    @FindBy(xpath = ".//tr[1]/td[1]/following-sibling::td")
+    private WebElement userDataText;
+
     public RegistrationFormPage(WebDriver driver) {
         super(driver);
     }
 
-    public void enterFirstName(String firstName) {
-        Waiters.waitForVisibility(firstNameField);
-        firstNameField.sendKeys(firstName);
+    public WebElement getFirstNameField() {
+        return firstNameField;
     }
 
-    public void enterLastName(String lastName) {
-        lastNameField.sendKeys(lastName);
+    public WebElement getLastNameField() {
+        return lastNameField;
     }
 
-    public void clickButton() {
-        maleRadioButton.click();
+    public WebElement getMaleRadioButton() {
+        return maleRadioButton;
     }
 
-    public void enterMobilePhoneNumber(String mobilePhoneNumber) {
-        mobilePhoneNumberField.sendKeys(mobilePhoneNumber);
+    public WebElement getMobilePhoneNumberField() {
+        return mobilePhoneNumberField;
     }
 
-    public void clickDropDown(String state) {
-        dropDown.sendKeys(state);
-        dropDown.sendKeys(Keys.RETURN);
+    public WebElement getDropDown() {
+        return dropDown;
     }
 
-    public void uploadPictureInput(String path) {
-        picture.sendKeys(path);
+    public WebElement getPicture() {
+        return picture;
     }
 
-    public void clickSubmitButton() {
-        submitButton.click();
+    public WebElement getSubmitButton() {
+        return submitButton;
+    }
+
+    public WebElement getUserDataText() {
+        return userDataText;
     }
 }
