@@ -1,10 +1,12 @@
 [
   {
     "firstName": "John",
-    "lastName": "Born"
+    "lastName": "Born",
+    "phoneNumber": "7529545499"
   },
   {
     "firstName": "Anna",
-    "lastName": "Stuart"
+    "lastName": "Stuart",
+    "phoneNumber": "7245692499"
   }
 ]

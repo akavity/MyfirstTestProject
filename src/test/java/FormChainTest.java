@@ -24,7 +24,7 @@ public class FormChainTest extends BaseTest {
                 .enterFirstName(userData.getFirstName())
                 .enterLastName(userData.getLastName())
                 .clickMaleRadioButton()
-                .enterMobileNumber("7529545499")
+                .enterMobileNumber(userData.getPhoneNumber())
                 .clickSubmitButton()
                 .getDataText();
 
