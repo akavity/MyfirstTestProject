@@ -10,7 +10,7 @@ import org.openqa.selenium.WebDriver;
 @Log4j2
 public class RegistrationFormSteps {
 
-    private RegistrationFormPage registrationFormPage;
+    private final RegistrationFormPage registrationFormPage;
     public RegistrationFormSteps(WebDriver driver) {
         registrationFormPage = new RegistrationFormPage(driver);
     }
@@ -67,11 +67,11 @@ public class RegistrationFormSteps {
         registrationFormPage.getMaleRadioButton().click();
         log.info("Enter mobile Phone number");
         registrationFormPage.getMobilePhoneNumberField().sendKeys(userData.getPhoneNumber());
-//        log.info("Click drop down");
-//        registrationFormPage.getDropDown().sendKeys(state);
-//        registrationFormPage.getDropDown().sendKeys(Keys.RETURN);
-//        log.info("Upload picture input");
-//        registrationFormPage.getPicture().sendKeys(path);
+        log.info("Click drop down");
+        registrationFormPage.getDropDown().sendKeys(userData.getState());
+        registrationFormPage.getDropDown().sendKeys(Keys.RETURN);
+        log.info("Upload picture input");
+        registrationFormPage.getPicture().sendKeys(userData.getPath());
         log.info("Click submit button");
         registrationFormPage.getSubmitButton().click();
     }

@@ -2,11 +2,15 @@
   {
     "firstName": "John",
     "lastName": "Born",
-    "phoneNumber": "7529545499"
+    "phoneNumber": "7529545499",
+    "state": "NCR",
+    "path": "G:\\home\\akavity\\dev\\course-qa-automation-engineer\\MyFirstTestProject\\src\\main\\resources\\2.jpg"
   },
   {
     "firstName": "Anna",
     "lastName": "Stuart",
-    "phoneNumber": "7245692499"
+    "phoneNumber": "7245692499",
+    "state": "NCR",
+    "path": "G:\\home\\akavity\\dev\\course-qa-automation-engineer\\MyFirstTestProject\\src\\main\\resources\\2.jpg"
   }
 ]

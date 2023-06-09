@@ -19,13 +19,12 @@ public class FormTest extends BaseTest {
 
     @Test(dataProvider = "userData", dataProviderClass = JsonReader.class)
     public void checkRegistrationFormData(UserData userData) {
-//        registrationFormSteps.enterFirstName(name);
-//        registrationFormSteps.enterLastName("Akavity");
+//        registrationFormSteps.enterFirstName(userData.getFirstName());
+//        registrationFormSteps.enterLastName(userData.getLastName());
 //        registrationFormSteps.clickButton();
-//        registrationFormSteps.enterMobilePhoneNumber("7529545499");
-//        registrationFormSteps.clickDropDown("NCR");
-//        registrationFormSteps.uploadPictureInput("G:\\home\\akavity\\dev\\course-qa-automation-engineer\\" +
-//                "MyFirstTestProject\\src\\main\\resources\\2.jpg");
+//        registrationFormSteps.enterMobilePhoneNumber(userData.getPhoneNumber());
+//        registrationFormSteps.clickDropDown(userData.getState());
+//        registrationFormSteps.uploadPictureInput(userData.getPath());
 //        registrationFormSteps.clickSubmitButton();
 
         registrationFormSteps.fillForm(userData);
